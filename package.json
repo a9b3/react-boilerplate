@@ -4,5 +4,8 @@
   "description": "React boilerplate",
   "main": "index.js",
   "author": "Sam Lau <esayemm@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "1.13.7"
+  }
 }
