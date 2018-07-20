@@ -1,9 +1,11 @@
 // react-hot-loader/patch has to be first
 import 'react-hot-loader/patch'
+
 import './styles/global.scss'
-import { render } from 'react-dom'
+
+import MainRouter       from 'components/MainRouter'
+import { render }       from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import MainRouter from 'components/MainRouter'
 
 function renderRoot() {
   render(
