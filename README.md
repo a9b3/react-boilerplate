@@ -1,0 +1,3 @@
+# React Boilerplate
+
+Using Webpack 4, ESLint, Prettier, Babel...
