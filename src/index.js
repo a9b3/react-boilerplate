@@ -3,8 +3,8 @@ import 'react-hot-loader/patch'
 
 import './styles/global.scss'
 
-import MainRouter       from 'components/MainRouter'
-import { render }       from 'react-dom'
+import MainRouter from 'components/MainRouter'
+import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 
 function renderRoot() {
