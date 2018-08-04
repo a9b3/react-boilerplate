@@ -36,6 +36,9 @@ module.exports = {
           /\.css$/,
           /\.html$/,
           /\.json$/,
+          // Using this webpack module.rules in storybook webpack config.
+          // https://github.com/storybooks/storybook/issues/2615
+          /\.ejs$/,
           /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
           /\.(png|jpe?g|gif|ico)$/i,
         ],

@@ -6,6 +6,8 @@
   "author": "Sam Lau <esayemm@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/addon-knobs": "3.4.10",
+    "@storybook/react": "3.4.10",
     "autoprefixer": "9.0.2",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
