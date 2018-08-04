@@ -1,7 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
 :root {
-  --blue: 0 255 255;
+  /* Typography */
+  --base-font-size: 16px;
+  --base-font-weight: regular;
+  --base-letter-spacing: 0.5;
+  --base-line-height: 1.5rem;
+
+  --h1-font-size: 6rem;
+  --h1-font-weight: light;
+  --h1-letter-spacing: -1.5;
+  --h1-line-height: 6rem;
+
+  --h2-font-size: 3.75rem;
+  --h2-font-weight: light;
+  --h2-letter-spacing: -0.5;
+  --h2-line-height: 3.75rem;
+
+  --h3-font-size: 3rem;
+  --h3-font-weight: regular;
+  --h3-letter-spacing: 0;
+  --h3-line-height: 3.125rem;
+
+  --h4-font-size: 2.125rem;
+  --h4-font-weight: regular;
+  --h4-letter-spacing: 0.25;
+  --h4-line-height: 2.5rem;
+
+  --h5-font-size: 1.5rem;
+  --h5-font-weight: regular;
+  --h5-letter-spacing: 0;
+  --h5-line-height: 2rem;
+
+  --h6-font-size: 1.25rem;
+  --h6-font-weight: medium;
+  --h6-letter-spacing: 0.15;
+  --h6-line-height: 2rem;
+
+  --button-font-size: 0.875rem;
+  --button-font-weight: medium;
+  --button-letter-spacing: 0.75;
+  --button-line-height: 0.875rem;
+  --button-text-transform: uppercase;
+
+  --caption-font-size: 0.75rem;
+  --caption-font-weight: regular;
+  --caption-letter-spacing: 0.4;
+  --caption-line-height: 1rem;
+
+  /* Colors */
+  // Grayscale
+  --black: #0D0106;
+  --dark1: #202124;
+  --dark2: #47494C;
+  --dark3: #A8A9AB;
+  --white: #FFFFFF;
+  --light1: #F7F8FC;
+  --light2: #DDDDE0;
+  --light3: #C6C6C6;
+
+  --primary: #DC4B75;
+  --secondary: #60D8FA;
+  --tertiary: #FFFD54;
+
+  --success: #8CDFD4;
+  --error: #EB3B25;
+  --warning: #FADD7F;
+
+  --background: var(--white);
+  --surface: var(--white);
+
+  --onPrimary: var(--white);
+  --onSecondary: var(--white);
+  --onTertiary: var(--white);
+  --onSuccess: var(--white);
+  --onError: var(--white);
+  --onWarning: var(--white);
+  --onBackground: var(--dark1);
+  --onSurface: var(--dark1);
+
+  /* Spacing */
+  --spacing-xs: 1rem;
+  --spacing-s: 1.5rem;
+  --spacing-m: 2rem;
+  --spacing-l: 4rem;
+  --spacing-xl: 8rem;
+  --increment: 4rem;
 }
 
-body {
-  background: #{'rgb(var(--blue))'};
+:global {
+  h1 {
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+    letter-spacing: var(--h1-letter-spacing);
+    line-height: var(--h1-line-height);
+  }
+  h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    letter-spacing: var(--h2-letter-spacing);
+    line-height: var(--h2-line-height);
+  }
+  h3 {
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    letter-spacing: var(--h3-letter-spacing);
+    line-height: var(--h3-line-height);
+  }
+  h4 {
+    font-size: var(--h4-font-size);
+    font-weight: var(--h4-font-weight);
+    letter-spacing: var(--h4-letter-spacing);
+    line-height: var(--h4-line-height);
+  }
+  h5 {
+    font-size: var(--h5-font-size);
+    font-weight: var(--h5-font-weight);
+    letter-spacing: var(--h5-letter-spacing);
+    line-height: var(--h5-line-height);
+  }
+  h6 {
+    font-size: var(--h6-font-size);
+    font-weight: var(--h6-font-weight);
+    letter-spacing: var(--h6-letter-spacing);
+    line-height: var(--h6-line-height);
+  }
+  button, .button {
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    letter-spacing: var(--button-letter-spacing);
+    line-height: var(--button-line-height);
+    text-transform: var(--button-text-transform);
+  }
+  .caption {
+    font-size: var(--caption-font-size);
+    font-weight: var(--caption-font-weight);
+    letter-spacing: var(--caption-letter-spacing);
+    line-height: var(--caption-line-height);
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    letter-spacing: var(--base-letter-spacing);
+    line-height: var(--base-line-height);
+    background: var(--background);
+    color: var(--onBackground);
+  }
 }

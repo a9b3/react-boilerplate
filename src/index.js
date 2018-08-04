@@ -1,6 +1,7 @@
 // react-hot-loader/patch has to be first
 import 'react-hot-loader/patch'
 
+import 'normalize.css'
 import './styles/global.scss'
 
 import MainRouter from 'components/MainRouter'
