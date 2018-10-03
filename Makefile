@@ -18,8 +18,9 @@ dev: deps
 	@NODE_PATH=${NODE_PATH} \
 		./node_modules/webpack-dev-server/bin/webpack-dev-server.js \
 		--client-log-level none \
-		--hot \
 		--color \
+		--history-api-fallback \
+		--hot \
 		--overlay \
 		--port ${PORT}
 
