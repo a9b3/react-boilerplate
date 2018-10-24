@@ -10,19 +10,30 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   // https://webpack.js.org/concepts/#mode
   mode: devMode ? 'development' : 'production',
+  // cheap-variant of SourceMap with module mappings
+  devtool: 'cheap-module-source-map',
   resolve: {
+    // Provide resolve paths with NODE_PATH delimited by :
+    // ex. (NODE_PATH=./src:./js:./foo)
     modules: ['node_modules'].concat(
       (process.env.NODE_PATH || '').split(path.delimiter).filter(Boolean),
     ),
   },
   entry: {
-    app: [path.resolve(__dirname, './src')],
+    app: [path.resolve(__dirname, './src/index.js')],
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[hash].bundled.js',
+    // During dev we want the hash to change everytime to get hot reloading. But
+    // for production we only want to update hash if content hash changed.
+    filename: devMode
+      ? '[name].[hash].bundled.js'
+      : '[name].[contenthash].bundled.js',
+    publicPath: '/',
   },
   module: {
+    // Makes missing exports an error
+    strictExportPresence: true,
     rules: [
       // We want all file types that does not have a rule set to be handled by
       // the file-loader, remember to exclude every new filetype that you add to
@@ -51,7 +62,7 @@ module.exports = {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/i,
         loader: require.resolve('url-loader'),
         options: {
-          // if asset is higher than limit, the file-loader will be used
+          // if asset is higher than limit, the file-loader will be used instead
           limit: 10000,
         },
       },
@@ -93,6 +104,7 @@ module.exports = {
           options: {
             // faster rebuilds
             cacheDirectory: true,
+            plugins: [require.resolve('react-hot-loader/babel')],
           },
         },
       },
@@ -179,5 +191,10 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
+    // https://twitter.com/wSokra/status/969633336732905474
+    splitChunks: {
+      chunks: 'all',
+    },
+    runtimeChunk: 'single',
   },
 }

@@ -24,12 +24,12 @@ dev: deps
 		--overlay \
 		--port ${PORT}
 
-
 .PHONY: build
 build:
 	@rm -rf ./build
+	@mkdir -p ./build
 	@NODE_ENV=production NODE_PATH=${NODE_PATH} \
-		./node_modules/webpack/bin/webpack.js
+		./node_modules/webpack/bin/webpack.js --profile --json > ./build/stats.json
 
 story: deps
 	@NODE_PATH=${NODE_PATH} ./node_modules/@storybook/react/bin/index.js \
